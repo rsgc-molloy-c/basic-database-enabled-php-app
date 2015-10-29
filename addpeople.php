@@ -31,8 +31,8 @@
   $connection = mysqli_connect($host, $user, $pass, $db, $port) or die(mysql_error());
   
   // And now perform simple query – make sure it's working
-  $query = "INSERT INTO patron (firstname) VALUES ('" . htmlspecialchars($_POST['firstname']) . "');";
- // $query = "INSERT INTO patron (lastname) VALUES ('" . htmlspecialchars($_POST['lastname']) . "');";
+  $query = "INSERT INTO patron (firstname, lastname) VALUES ('" . htmlspecialchars($_POST['firstname']) . "', '" . htmlspecialchars($_POST['lastname']) . "');";
+  
   
   // Check to see if query succeeded
   if (mysqli_query($connection, $query)) {
